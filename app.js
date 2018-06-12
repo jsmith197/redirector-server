@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
-var serv = require('http').Server(app)
+var server = require('http').Server(app)
+var io = require('socket.io').listen(server,{})
 
 app.get('/', function(req, res) {
   res.sendFile('/home/borra/g75/redirector/redirector/index.html')
@@ -8,7 +9,7 @@ app.get('/', function(req, res) {
 
 app.use('../redirector', express.static('/home/borra/g75/redirector/redirector'))
 
-serv.listen(2000)
+server.listen(process.env.PORT || 2000)
 
 var animationX = [0, 20, 40, 60, 80, 100, 120, 140, 160]
 
@@ -369,7 +370,7 @@ var SOCKET_LIST = {}
 var SERVER_LIST = [[],[]]
 
 
-var io = require('socket.io')(serv,{})
+
 var number = 0
 io.sockets.on('connection', function(socket){
     socket.on('createPlayer', function(data) {
