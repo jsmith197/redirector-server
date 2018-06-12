@@ -114,7 +114,6 @@ export default {
         self.usernameFail = false
         self.emailFail = false
         for (var i = 0; i < result.users.length; i++) {
-          console.log(result.users[i]);
           if (result.users[i].email.toLowerCase() === getBody.email.toLowerCase()) {
             self.emailFail = true
           }
