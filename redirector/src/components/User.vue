@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-center">
       <p class="bio">{{this.person.bio}}</p>
       <router-link :to="{ name: 'Band', params: { band: this.person.band} }">
-        <h5 class="bio">band: {{this.person.band}}</h5>
+        <h5 class="bio">Groups: {{this.person.band}}</h5>
       </router-link>
     </div>
     <div class="progress">
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     generatePerson() {
-      fetch("http://localhost:3000/users/"+ this.user)
+      fetch("https://blooming-spire-76156.herokuapp.com/users/"+ this.user)
       .then(response => response.json())
       .then(result => {
         this.person = result.users

@@ -31,7 +31,7 @@ export default {
       numOfPlayers: 0,
       gameId: this.$route.params.gameId,
       thisPlayer:this.$route.params.player,
-      socket: io('http://localhost:2000')
+      socket: io('https://mighty-temple-41093.herokuapp.com/')
     }
   },
   mounted() {
@@ -56,7 +56,6 @@ export default {
             self.numOfPlayers = data.player.length
             playerObj.name = data.player[i].name
             playerObj.color = data.player[i].color
-            playerObj.victorys = data.player[i].victorys
             playerObj.damageDelt = 0
             playerObj.damageBlocked = 0
             playerObj.healed = 0

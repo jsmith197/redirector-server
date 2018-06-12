@@ -106,10 +106,9 @@ export default {
         email:newUser.email,
         password:newUser.password,
         color:newUser.color,
-        victorys: 0,
       }
       self = this
-      fetch("http://localhost:3000/users/")
+      fetch("https://blooming-spire-76156.herokuapp.com/users/")
       .then(response => response.json())
       .then(result => {
         self.usernameFail = false
@@ -129,7 +128,7 @@ export default {
       })
     },
     pushProfile (getBody){
-      fetch("http://localhost:3000/users/", {
+      fetch("https://blooming-spire-76156.herokuapp.com/users/", {
         method: "POST",
         body: JSON.stringify(getBody),
         headers: {

@@ -98,7 +98,7 @@ export default {
     },
     login() {
 
-      fetch("http://localhost:3000/users/"+ this.username)
+      fetch("https://blooming-spire-76156.herokuapp.com/users/"+ this.username)
       .then(response => response.json())
       .then(result => {
         if (this.password === result.users.password) {

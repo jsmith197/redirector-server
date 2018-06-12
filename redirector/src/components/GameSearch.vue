@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     getProfile() {
-      fetch("http://localhost:3000/users/"+ this.user)
+      fetch("https://blooming-spire-76156.herokuapp.com/users/"+ this.user)
       .then(response => response.json())
       .then(result => {
         this.player.name = result.users.username

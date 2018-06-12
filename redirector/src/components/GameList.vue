@@ -47,10 +47,10 @@ export default {
         type:"Duel",
         players: {
           player1:{
-            name:"Borra"
+            name:"empty"
           },
           player2:{
-            name:"Vandalf"
+            name:"empty"
           },
         },
         gameId:0,
@@ -90,7 +90,6 @@ export default {
       //   }
       // })
       this.games.push(this.sampleGame)
-      this.games.push(this.sampleGame2)
     },
     selectMatch(game){
       this.getMatchId(game)
