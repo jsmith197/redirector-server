@@ -378,7 +378,7 @@ io.sockets.on('connection', function(socket){
       socket.id = Math.random() * 10000000000000000
       socket.player.number = number
       SERVER_LIST[data.player.gameId].push(socket)
-      console.log(SERVER_LIST[data.player.gameId].socket);
+      // console.log(SERVER_LIST[data.player.gameId].socket);
       SOCKET_LIST[socket.id] = socket
       Player.onConnect(socket)
       if (number === 0) {
@@ -393,7 +393,7 @@ io.sockets.on('connection', function(socket){
     delete SOCKET_LIST[socket.id]
     Player.onDisconnect(socket.id)
     SERVER_LIST[socket.player.gameId].splice(socket.player.number, 1)
-    console.log(SERVER_LIST);
+    // console.log(SERVER_LIST);
   })
 })
 
