@@ -1,13 +1,11 @@
 var express = require('express')
 var app = express()
 var server = require('http').Server(app)
-var io = require('socket.io').listen(server,{})
+var io = require('socket.io').listen(server)
 
-app.get('/', function(req, res) {
-  res.sendFile('/home/borra/g75/redirector/redirector/index.html')
-})
+app.get('/', function(req, res) {res.sendFile(__dirname + '/redirector/index.html')})
 
-app.use('../redirector', express.static('/home/borra/g75/redirector/redirector'))
+app.use('/redirector', express.static(__dirname + '/redirector'))
 
 server.listen(process.env.PORT || 2000)
 
