@@ -5,4 +5,6 @@ its a multiplayer game that anyone can play.
 
 http://redirector.surge.sh/#/
 
-To install npm install in parent folder and redirector folder. Its in Vue
+To install npm install in parent folder and redirector folder. Its in Vue.
+
+To contact me email me at jobsmith9@gmail.com
