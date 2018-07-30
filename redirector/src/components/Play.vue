@@ -94,6 +94,8 @@ export default {
         }
 
         for (var i = 0; i < data.sheild.length; i++) {
+          ctx.shadowColor = data.sheild[i].color
+          ctx.shadowBlur = 10
           ctx.globalAlpha = 0.2
           ctx.beginPath()
           ctx.arc(data.sheild[i].x + 30, data.sheild[i].y + 42, 50, 0, Math.PI * 2, false)
@@ -101,13 +103,17 @@ export default {
           ctx.fillStyle = data.sheild[i].color
           ctx.fill()
           ctx.stroke()
+          ctx.shadowBlur = 0
           ctx.globalAlpha = 1
         }
         for (var i = 0; i < data.bullet.length; i++) {
+          ctx.shadowColor = data.bullet[i].color
+          ctx.shadowBlur = 10
           ctx.fillStyle = "#eae0c8"
           ctx.fillRect(data.bullet[i].x, data.bullet[i].y, 10, 10)
           ctx.fillStyle = data.bullet[i].color
           ctx.fillRect(data.bullet[i].x, data.bullet[i].y, 9, 9)
+          ctx.shadowBlur = 0
         }
 
       })

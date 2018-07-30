@@ -79,17 +79,39 @@ export default {
     initialize() {
       var glassCanvas = document.getElementById('canvas-glass')
       var c = glassCanvas.getContext('2d')
+      var b = Math.random()
+      var w = false
 
+      function draw() {
         glassCanvas.width = window.innerWidth
-        glassCanvas.height = 65
+        glassCanvas.height = 66
         c.fillStyle = 'rgba(150,150,150, .7)'
         c.fillRect(0, 0, window.innerWidth, 65)
         var gradient = c.createLinearGradient(0, 0, 20, 200)
         gradient.addColorStop(0, 'rgba(255,255,255, 0)')
-        gradient.addColorStop(Math.random(), 'rgba(50,50,150,1)')
+        gradient.addColorStop(b , 'rgba(50,50,150,.8)')
         gradient.addColorStop(1, 'rgba(255,255,255, 0)')
         c.fillStyle = gradient
         c.fillRect(0, 0, window.innerWidth, 65)
+      }
+      function animate() {
+      requestAnimationFrame(animate);
+      c.clearRect(0, 0, innerWidth, innerHeight);
+      if (b >= .98) {
+        w = true
+      }else if (b <= .01) {
+        w = false
+      }
+      if (w === false) {
+        b = b + 0.0005
+      }else if (w === true) {
+        b = b - 0.0005
+      }
+      draw()
+      }
+      draw()
+      animate()
+
     },
     changeUser(chosenUser) {
       this.$localStorage.set('cachedUser', chosenUser)

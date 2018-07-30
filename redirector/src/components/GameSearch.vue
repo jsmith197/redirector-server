@@ -4,14 +4,14 @@
       <h1>Please make a profile if you wish to play</h1>
     </div>
 
-    <div v-if="user" class="">
+    <div v-if="user" class="search">
     <h1>GameSearch</h1>
 
-    <button id="show-modal" @click="showList = true">Choose Game</button>
+    <button id="show-modal" @click="showList = true" class="btn btn-secondary">Choose Game</button>
 
-    <button v-if="matched" v-on:click="getProfile" type="button" name="button">Connect to Lobby</button>
+    <button v-if="matched" v-on:click="getProfile" type="button" name="button" class="btn btn-secondary">Connect to Lobby</button>
     <h1 v-if="gameFound">Game Found</h1>
-    <button v-if="gameFound"><router-link :to="{ name: 'Matched', params: {gameId:this.matchedId, player:this.player} }">Join Lobby</router-link></button>
+    <button v-if="gameFound" class="btn btn-secondary"><router-link :to="{ name: 'Matched', params: {gameId:this.matchedId, player:this.player} }">Join Lobby</router-link></button>
   </div>
   <GameList v-if="showList" @close="showList = false" :getMatchId="getMatchId"></GameList>
   </div>
@@ -66,5 +66,8 @@ export default {
 .container{
   height: 100%
 }
-
+.search{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 </style>

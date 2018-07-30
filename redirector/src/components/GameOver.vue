@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="container d-flex flex-column justify-content-center align-items-center">
     <h1>GameOver</h1>
+    <br>
     <h1>The victor is {{this.winner.name}}</h1>
-    <button v-on:click="home">Return Home</button>
+    <br>
+    <button class="btn btn-primary" v-on:click="home">Return Home</button>
   </div>
 </template>
 
@@ -37,5 +39,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.container{
+  height: 100vh
+}
 </style>

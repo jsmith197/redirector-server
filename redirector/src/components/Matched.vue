@@ -4,7 +4,7 @@
 
     <h1>Lobby</h1>
     <h3>{{this.numOfPlayers}} / 2 Players</h3>
-    <button v-if="ready" v-on:click="readyUp" >Join Game</button>
+    <button v-if="ready" v-on:click="readyUp" class="btn btn-secondary">Join Game</button>
   </div>
 
     <Play v-if="start" :thisPlayer="thisPlayer" :socket="socket" :playingGame="playingGame" :players="players" :gameId="this.$route.params.gameId"></Play>
@@ -87,4 +87,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 </style>
