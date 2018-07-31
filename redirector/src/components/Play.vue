@@ -25,17 +25,6 @@ export default {
       },
       timer: 0,
       gameOver:false,
-      player: {
-        name: "Borra",
-        color: "white",
-        victorys: 3,
-        stats:{
-          damageDelt: 0,
-          damageBlocked:0,
-          healed: 0,
-          time: 0,
-        }
-      },
       currentPlayers: {},
       victor: "",
 

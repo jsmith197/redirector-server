@@ -13,7 +13,6 @@
       <br>
       3.Pair with someone
     </h3>
-
     <h1 class="display-1">Controls</h1>
     <h3>(WASD) for movement
       <br>
@@ -25,10 +24,9 @@
       <br>
       <br>
       (Shift) sheild
+      <br>
+      <br>
     </h3>
-
-
-
 </div>
 </template>
 
